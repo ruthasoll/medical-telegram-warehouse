@@ -1,0 +1,24 @@
+
+  
+    
+
+  create  table "medical_warehouse"."public"."dim_channels__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+SELECT
+    ROW_NUMBER() OVER (ORDER BY channel_name) AS channel_key,
+    channel_name,
+    'Pharmaceutical' AS channel_type,  -- Hardcode or derive
+    MIN(message_date) AS first_post_date,
+    MAX(message_date) AS last_post_date,
+    COUNT(*) AS total_posts,
+    AVG(views) AS avg_views
+FROM "medical_warehouse"."public"."stg_telegram_messages"
+GROUP BY channel_name
+  );
+  

@@ -1,4 +1,4 @@
-{{ config(materialized='view', schema='medical_user_schema') }}
+
 
 SELECT
     message_id::integer                 AS message_id,
@@ -13,7 +13,7 @@ SELECT
     -- Some helpful derived columns
     LENGTH(COALESCE(message_text, ''))  AS message_length,
     CASE WHEN image_path IS NOT NULL THEN true ELSE false END AS has_image_flag
-FROM {{ source('raw', 'telegram_messages') }}
+FROM "medical_warehouse"."raw"."telegram_messages"
 WHERE message_id IS NOT NULL
   AND message_date IS NOT NULL          -- basic quality filter
 
