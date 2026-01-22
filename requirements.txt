@@ -1,2 +1,13 @@
 telethon
 python-dotenv
+dbt-postgres
+fastapi
+uvicorn
+sqlalchemy
+psycopg2
+ultralytics
+dagster
+dagster-webserver
+pandas
+opencv-python-headless
+requests
