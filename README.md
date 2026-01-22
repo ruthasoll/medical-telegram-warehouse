@@ -148,5 +148,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - **Final Submission**: 20 Jan 2026
 ```
 
-### Summary
-This README file is structured in Markdown format and provides a comprehensive overview of the entire project, including key features, installation instructions, and communication channels. Adjust any placeholders like URLs and specific personal links as necessary!
+
